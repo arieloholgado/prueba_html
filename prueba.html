@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Prueba Cierre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-    <h1>Página de Prueba</h1>
-    <button onclick="cerrar()">CERRAR NAVEGADOR</button>
-
-    <script>
-        function cerrar() {
-            console.log("Intentando cerrar...");
-            window.location.href = "mi-app://close";
-        }
-    </script>
+<body style="display:flex; justify-content:center; align-items:center; height:100vh;">
+    <button 
+        onclick="window.location.href='mi-app://close'" 
+        style="padding:20px; background:red; color:white; font-size:20px; border-radius:10px;">
+        CERRAR Y VOLVER A LA APP
+    </button>
 </body>
 </html>
