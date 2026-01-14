@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Variables de color que pasaste */
+        /* Definición de tus variables de color */
         :root {
             --ion-color-primary: #ffae5f;
             --ion-color-primary-rgb: 255,174,95;
@@ -26,58 +26,58 @@
             background-color: white;
         }
 
-        /* Contenedor de la imagen superior */
+        /* Contenedor del logo superior */
         .back-inner {
             background-image: url('logo_inner_L.png');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             width: 100%;
-            height: 120px; /* Ajusta según tu necesidad */
+            height: 120px; /* Ajusta según necesites */
         }
 
-        /* .header-page adaptado */
+        /* Estilos de la barra del header (header-page) */
         .header-page {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 8px 16px;
-            min-height: 0px; /* Según tu estilo */
+            padding: 0 16px;
+            min-height: 50px; /* Simula el comportamiento de ion-item */
             background-color: var(--ion-color-primary);
             color: var(--ion-color-primary-contrast);
         }
 
-        /* Estilo del label dentro del header */
-        .header-page .ion-label {
+        /* Texto del Header */
+        .header-label {
             font-family: "Open Sans" !important;
             font-weight: 500 !important;
             font-size: 18px !important;
         }
 
-        /* Estilo del botón .button-back */
+        /* Botón de atrás estilo ion-button personalizado */
         .button-back {
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
             border: none;
             padding: 0;
             margin: 0;
-            width: 40px;  /* Tamaño para el área de clic */
+            cursor: pointer;
+            width: 40px;
             height: 40px;
             color: #ffffff;
-            background-color: #ffae5f; /* Tu color específico */
-            border-radius: 4px; /* Opcional, para que parezca botón */
+            background-color: #ffae5f; /* Tu color de fondo específico */
+            border-radius: 4px; /* Opcional, para suavizar bordes */
         }
 
-        /* El icono dentro del botón */
+        /* Icono dentro del botón (ion-icon) */
         .button-back img {
-            width: 25px; /* Según tu ion-icon font-size: 25px */
+            width: 25px;
             height: 25px;
-            filter: brightness(0) invert(1); /* Fuerza a que el icono sea blanco si es oscuro */
+            filter: brightness(0) invert(1); /* Fuerza a que el SVG sea blanco si es oscuro */
         }
 
-        /* Otros estilos que pasaste */
+        /* Estilos adicionales que pediste */
         .item-subtitle {
             font-family: "Open Sans";
             font-weight: 700;
@@ -88,39 +88,31 @@
         .credential-card {
             background-color: var(--ion-color-light);
             border-radius: 10px;
-            margin: 20px;
-            padding: 20px;
-        }
-
-        header {
-            box-shadow: none; /* no-shadow */
+            margin: 16px;
+            padding: 16px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="back-inner"></div>
+    <div class="back-inner"></div>
 
-        <div class="header-page">
-            <div class="ion-label">Título de Página</div>
-            
-            <button class="button-back" onclick="navigateToMainPage()">
-                <img src="boton-back.svg" alt="Back" onerror="this.src='https://cdn-icons-png.flaticon.com/512/271/271220.png'">
-            </button>
-        </div>
-    </header>
+    <div class="header-page">
+        <div class="header-label">Título de la Página</div>
+        
+        <button class="button-back" onclick="navigateToMainPage()">
+            <img src="boton-back.svg" alt="back">
+        </button>
+    </div>
 
-    <main>
-        <div class="credential-card">
-            <div class="item-subtitle">Información</div>
-            <p>Esta página se cerrará al presionar el botón naranja de arriba a la derecha.</p>
-        </div>
-    </main>
+    <div class="credential-card">
+        <div class="item-subtitle">Información</div>
+        <p>Presiona el botón naranja con la flecha para cerrar esta ventana y volver a la aplicación nativa.</p>
+    </div>
 
     <script>
         function navigateToMainPage() {
-            // Llama al esquema que configuraste en Xcode/Android
+            // Llama al Deep Link que configuramos en el Info.plist de Xcode
             window.location.href = "mi-app://close";
         }
     </script>
