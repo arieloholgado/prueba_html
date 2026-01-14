@@ -74,7 +74,8 @@
         .button-back img {
             width: 25px;
             height: 25px;
-            filter: brightness(0) invert(1); /* Fuerza a que el SVG sea blanco si es oscuro */
+            display: block; /* Asegura que ocupe espacio */
+            object-fit: contain;
         }
 
         /* Estilos adicionales que pediste */
