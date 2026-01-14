@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Prueba</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        button { padding: 15px 30px; font-size: 18px; background-color: #ff4444; color: white; border: none; border-radius: 8px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a la Web</h1>
+    <p>Esta es una página local dentro de la App.</p>
+    
+    <button onclick="cerrarYVolver()">FINALIZAR Y CERRAR</button>
+
+    <script>
+        function cerrarYVolver() {
+            // "mi-app" debe coincidir con el esquema que configures en Android/iOS
+            window.location.href = "mi-app://close";
+        }
+    </script>
+</body>
+</html>
