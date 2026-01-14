@@ -54,28 +54,24 @@
             font-size: 18px !important;
         }
 
-        /* Botón de atrás estilo ion-button personalizado */
         .button-back {
             display: flex;
             align-items: center;
             justify-content: center;
-            border: none;
+            border: 1px solid white; /* Un borde fino blanco ayuda a que resalte */
             padding: 0;
             margin: 0;
             cursor: pointer;
-            width: 40px;
-            height: 40px;
-            color: #ffffff;
-            background-color: #ffae5f; /* Tu color de fondo específico */
-            border-radius: 4px; /* Opcional, para suavizar bordes */
+            width: 35px;
+            height: 35px;
+            background-color: #ffae5f; /* Tu naranja */
+            border-radius: 50%; /* Lo hace circular como en Ionic */
+            overflow: hidden;
         }
-
-        /* Icono dentro del botón (ion-icon) */
-        .button-back img {
-            width: 25px;
-            height: 25px;
-            display: block; /* Asegura que ocupe espacio */
-            object-fit: contain;
+        
+        .button-back svg, .button-back img {
+            width: 20px;
+            height: 20px;
         }
 
         /* Estilos adicionales que pediste */
