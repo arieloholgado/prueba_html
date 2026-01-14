@@ -1,13 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Página de Prueba</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --ion-color-medium: #92949c;
+            --ion-color-light: #f4f5f8;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans", sans-serif;
+            background-color: white;
+        }
+
+        /* Simulación de ion-header */
+        header {
+            position: relative;
+            width: 100%;
+            background: white;
+            box-shadow: none;
+        }
+
+        /* El fondo con tu imagen */
+        .back-inner {
+            background-image: url('logo_inner_L.png'); /* Asegúrate que esté en la misma carpeta */
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100px; /* Ajusta este alto según tu backHeight */
+        }
+
+        /* Simulación de ion-item para el header */
+        .header-page {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            border: none;
+        }
+
+        .header-label {
+            font-family: "Open Sans";
+            font-weight: 500;
+            font-size: 16px;
+            flex-grow: 1;
+        }
+
+        /* Botón de atrás (ion-button) */
+        .button-back {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button-back img {
+            width: 24px; /* Tamaño del icono */
+            height: 24px;
+        }
+
+        /* Tus estilos adicionales */
+        .header-title {
+            font-family: "Open Sans";
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .item-subtitle {
+            font-family: "Open Sans";
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--ion-color-medium);
+        }
+
+        .credential-card {
+            background-color: var(--ion-color-light);
+            border-radius: 10px;
+            margin: 16px;
+            padding: 16px;
+        }
+
+        .web-frame {
+            width: 100%;
+            height: 100%;
+            border-width: 0px;
+        }
+    </style>
 </head>
-<body style="display:flex; justify-content:center; align-items:center; height:100vh;">
-    <button 
-        onclick="window.location.href='mi-app://close'" 
-        style="padding:20px; background:red; color:white; font-size:20px; border-radius:10px;">
-        CERRAR Y VOLVER A LA APP
-    </button>
+<body>
+
+    <header>
+        <div class="back-inner"></div>
+
+        <div class="header-page">
+            <div class="header-label">Título de la Página</div>
+            
+            <button class="button-back" onclick="navigateToMainPage()">
+                <img src="boton-back.svg" alt="Atrás" onerror="this.src='https://cdn-icons-png.flaticon.com/512/271/271220.png'">
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="credential-card">
+            <div class="item-subtitle">Subtítulo de prueba</div>
+            <p>Contenido de la página que se abre en el navegador nativo.</p>
+        </div>
+    </main>
+
+    <script>
+        function navigateToMainPage() {
+            console.log("Cerrando navegador...");
+            // Este es el link que activa tu App de Capacitor
+            window.location.href = "mi-app://close";
+        }
+    </script>
+
 </body>
 </html>
